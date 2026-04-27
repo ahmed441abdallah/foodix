@@ -1,10 +1,7 @@
 import React from 'react';
 import {  motion } from 'framer-motion';
 import "./Header.scss";
-import steakImage from '../../assets/images/Image4.png';
-import spiceImage1 from '../../assets/images/Images3.png';
-import spiceImage2 from '../../assets/images/h1.png';
-import spiceImage3 from '../../assets/images/h2.png';
+import { steakImage, spiceImage1, spiceImage2, spiceImage3 } from '../../utils/images';
 import { fadeIn } from '../../reducers/variants';
 
 const Header = () => {

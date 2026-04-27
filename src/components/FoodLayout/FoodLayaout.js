@@ -1,10 +1,8 @@
 import React from "react";
 import "./FoodLayout.scss";
-import Drink from '../../assets/images/d.png'
+import { drinkLayoutImage as Drink, foodLayoutImage as Food, breadLayoutImage as Food2 } from '../../utils/images';
 import { fadeIn } from '../../reducers/variants';
-import {  motion } from 'framer-motion';
-import Food from '../../assets/images/f.png'
-import Food2 from '../../assets/images/bread on white ceramic plate 1.png'
+import { motion } from 'framer-motion';
 const FoodLayout = () => {
   return (
     <div className="food-layout">

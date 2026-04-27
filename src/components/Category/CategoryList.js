@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import "./Category.scss";
 import { TbArrowRight } from 'react-icons/tb';
 
-import drink from '../../assets/images/lemonade-juice-lemon-lime-drink-food-lemon-b3bfa6a6f55acd72090905215e1cd757.png';
+import { drinkCategoryIcon as drink } from '../../utils/images';
 import { motion } from 'framer-motion';
 import {plateVariants , staggerContainer , fadeIn} from '../../reducers/variants';
 const CategoryList = ({categories}) => {

@@ -1,11 +1,9 @@
 import React from "react";
 import "./Menu.scss";
-import i1 from "../../assets/images/m.png";
-import i2 from "../../assets/images/m2.png";
-import i3 from "../../assets/images/m3.png";
-import i5 from "../../assets/images/m5.png";
-import i4 from "../../assets/images/m4.png";
-import i6 from "../../assets/images/m6.png";
+import {
+  menuImg1 as i1, menuImg2 as i2, menuImg3 as i3,
+  menuImg4 as i4, menuImg5 as i5, menuImg6 as i6
+} from '../../utils/images';
 import { BsArrowRight } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { fadeIn } from "../../reducers/variants";

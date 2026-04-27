@@ -1,9 +1,7 @@
 // src/components/FoodiesHub.js
 import React from 'react';
 import './Features.scss'; // External CSS for styling
-import Imag from '../../assets/images/CircleIcon.png'
-import Imag2 from '../../assets/images/CircleIcon2.png'
-import Imag3 from '../../assets/images/CircleIcon3.png'
+import { featureIcon1 as Imag, featureIcon2 as Imag2, featureIcon3 as Imag3 } from '../../utils/images';
 import { fadeIn } from "../../reducers/variants";
 import { motion } from 'framer-motion';
 const Features = () => {

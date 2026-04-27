@@ -1,8 +1,6 @@
 import React from "react";
 import "./Category2.scss";
-import I from "../../assets/images/s.png";
-import Im from "../../assets/images/s2.png";
-import Img from "../../assets/images/s3.png";
+import { categoryImg1 as I, categoryImg2 as Im, categoryImg3 as Img } from '../../utils/images';
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../reducers/variants";

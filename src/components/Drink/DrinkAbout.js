@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './DrinkAbout.scss'
-import i from '../../assets/images/front-view-refreshing-lemonade-with-pomegranate-mint.jpg'
-import i2 from '../../assets/images/brown-cup-with-tea-cinnamon-sticks-wooden-support.jpg'
+import { lemonadeImage as i, teaImage as i2 } from '../../utils/images';
 import { Link } from 'react-router-dom';
 import { AiFillHome } from 'react-icons/ai';
 import { BiChevronsRight } from 'react-icons/bi';

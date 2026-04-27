@@ -8,7 +8,7 @@ import { startFetchSingleMeal } from '../../actions/mealsActions';
 import Loader from '../../components/Loader/Loader';
 import Secions from '../../components/secsion/Secions';
 import Headersingle from '../../components/Headersingle/Headersingle';
-import i from '../../assets/images/he2.png'
+import { mealDetailsHero as i } from '../../utils/images';
 import FoodLayout from '../../components/FoodLayout/FoodLayaout';
 import CaloriesBalance from '../../components/Category2/CategoryList2';
 import DrinkC from '../../components/Drink/DrinksC';

@@ -5,7 +5,7 @@ import MealList from '../../components/Meal/MealList';
 import { Link, useParams } from 'react-router-dom';
 import { startFetchMealByCategory } from '../../actions/mealsActions';
 import Headersingle from '../../components/Headersingle/Headersingle';
-import i from '../../assets/images/he3.png'
+import { categoryPageHero as i } from '../../utils/images';
 import FoodLayout from '../../components/FoodLayout/FoodLayaout';
 import { BiChevronsRight } from 'react-icons/bi';
 import { fadeIn } from '../../reducers/variants';

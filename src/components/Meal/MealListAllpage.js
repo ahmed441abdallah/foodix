@@ -1,7 +1,7 @@
 
 import MealListAll from "./MeailListAll";
  // Fixed typo from MeailListAll to MealListAll
- import i1 from '../../assets/images/i5.png'
+import { mealListHeroImage as i1 } from '../../utils/images';
 import Headersingle from "../Headersingle/Headersingle";
 const MealListAllPage = () => {
 

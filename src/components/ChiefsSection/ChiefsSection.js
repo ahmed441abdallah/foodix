@@ -2,13 +2,11 @@ import React from 'react';
 import Slider from 'react-slick';
 import ChiefCard from "./ChiefCard";
 import './Chief.scss';
-import i1 from '../../assets/images/img_1.jpg';
-import i2 from '../../assets/images/img_2.jpg';
-import i3 from '../../assets/images/img_3.jpg';
-import i4 from '../../assets/images/img_4.jpg';
-import i5 from '../../assets/images/img_5.jpg';
-import i6 from '../../assets/images/img_6.jpg';
-import Imag from '../../assets/images/rosemary.png'
+import {
+  chefImg1 as i1, chefImg2 as i2, chefImg3 as i3,
+  chefImg4 as i4, chefImg5 as i5, chefImg6 as i6,
+  rosemaryImage as Imag
+} from '../../utils/images';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../reducers/variants';
 

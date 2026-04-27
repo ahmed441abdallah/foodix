@@ -1,9 +1,7 @@
 import React from "react";
 import './About.scss';
 import { motion } from "framer-motion";
-import tableSettingImage from "../../assets/images/7.png"; // replace with the actual path to your image
-import restaurantImage from "../../assets/images/6.png";      // replace with the actual path to your image
-import Imag from '../../assets/images/rosemary.png'
+import { tableSettingImage, restaurantImage, rosemaryImage as Imag } from '../../utils/images';
 import { fadeIn } from "../../reducers/variants";
 const About=()=> {
   return (

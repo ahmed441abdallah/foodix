@@ -1,9 +1,8 @@
 // src/components/FoodiesHub.js
 import React from 'react';
 import './Chef.scss'; // External CSS for styling
-import Imag from '../../assets/images/Image1.png'
+import { chefMainImage as Imag, leafImage as Imag3 } from '../../utils/images';
 import { motion } from 'framer-motion';
-import Imag3 from '../../assets/images/Leaf1.png'
 import { fadeIn, plateVariants, staggerContainer } from '../../reducers/variants';
 const Chef = () => {
 

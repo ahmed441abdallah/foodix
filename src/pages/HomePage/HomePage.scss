@@ -1,1 +1,36 @@
 @import "../../App.scss";
+
+// ─────────────────────────────────────────────────────────────────────────────
+// HOME PAGE
+// ─────────────────────────────────────────────────────────────────────────────
+
+.home-page {
+  // No padding-top: the Hero is 100vh and the navbar overlays it transparently.
+  overflow-x: hidden;
+  background-color: $clr-background;
+}
+
+// ── Section wrapper with editorial overline label ─────────────────────────────
+
+.home-section {
+  position: relative;
+
+  &__label {
+    padding: 3.5rem 3rem 0;
+    max-width: 1320px;
+    margin: 0 auto;
+
+    span {
+      font-family: $font-body;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: $clr-text-muted;
+    }
+
+    @media (max-width: 768px) {
+      padding: 2.5rem 1.5rem 0;
+    }
+  }
+}
