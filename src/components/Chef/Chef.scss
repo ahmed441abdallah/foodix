@@ -1,0 +1,109 @@
+@import "../../App.scss";
+
+// ─────────────────────────────────────────────────────────────────────────────
+// CHEF — editorial feature section
+// ─────────────────────────────────────────────────────────────────────────────
+
+.excellent-cook-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem 4rem;
+  background-color: $clr-background;
+  gap: 5rem;
+
+  .image-section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+
+    .chef-image {
+      width: 85%;
+      height: auto;
+      object-fit: cover;
+      filter: grayscale(8%);
+      transition: filter 400ms ease;
+
+      &:hover { filter: grayscale(0%); }
+    }
+  }
+
+  .text-section {
+    max-width: 42%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    // Overline label
+    &::before {
+      content: 'Our Chef';
+      display: block;
+      font-family: $font-body;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: $clr-text-muted;
+      margin-bottom: 1.25rem;
+    }
+
+    .salmon-image {
+      width: 14rem;
+      height: auto;
+      position: relative;
+      margin-bottom: 1.5rem;
+      opacity: 0.9;
+    }
+
+    h1 {
+      font-family: $font-heading !important;
+      font-size: clamp(2rem, 3.5vw, 3.5rem);
+      font-weight: 800;
+      color: $clr-jet;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 1.8;
+      color: $clr-text-secondary;
+      max-width: 42ch;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+    padding: 4rem 2rem;
+    gap: 2.5rem;
+    text-align: center;
+
+    .image-section {
+      width: 100%;
+
+      .chef-image {
+        width: 75%;
+      }
+    }
+
+    .text-section {
+      max-width: 100%;
+      align-items: center;
+
+      &::before { text-align: center; }
+
+      h1 { font-size: 2rem; }
+      p  { font-size: 13px; }
+    }
+  }
+
+  @media only screen and (max-width: 480px) {
+    .text-section {
+      h1 { font-size: 1.625rem; }
+    }
+  }
+}

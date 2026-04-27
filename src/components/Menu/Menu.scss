@@ -1,0 +1,107 @@
+@import '../../App.scss';
+
+// ─────────────────────────────────────────────────────────────────────────────
+// MENU — editorial image-grid with overlay cards
+// ─────────────────────────────────────────────────────────────────────────────
+
+.all-menu {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+
+  // ── Shared Grid ─────────────────────────────────────────────────────────────
+
+  .menu-grid,
+  .menu-grid-2,
+  .menu-grid-3 {
+    display: grid;
+    gap: 2px;
+    width: 100%;
+    margin: 0 auto;
+    height: auto;
+
+    .menu-item {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 500ms ease;
+      }
+
+      .overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 2rem 1.75rem;
+        background: linear-gradient(
+          transparent,
+          rgba(10, 10, 10, 0.88)
+        );
+
+        h3 {
+          font-family: $font-heading !important;
+          font-size: clamp(1rem, 1.5vw, 1.375rem);
+          font-weight: 700;
+          color: $clr-surface !important;
+          letter-spacing: -0.01em;
+          margin: 0 0 0.25rem;
+        }
+
+        p {
+          font-family: $font-body !important;
+          font-size: 11px !important;
+          letter-spacing: 0.05em;
+          opacity: 0.65;
+          color: rgba(255, 255, 255, 0.8) !important;
+          margin: 0;
+        }
+      }
+
+      &:hover img {
+        transform: scale(1.04);
+      }
+    }
+  }
+
+  .menu-grid {
+    grid-template-columns: 2fr 1fr;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .menu-grid-2 {
+    grid-template-columns: 1fr 2fr;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .menu-grid-3 {
+    grid-template-columns: 1fr 1fr;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+// ── Hover Icon ────────────────────────────────────────────────────────────────
+
+.menu-item {
+  &:hover .icons {
+    margin-left: 8px;
+    transition: $transition;
+    color: $clr-espresso;
+  }
+}

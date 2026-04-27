@@ -1,0 +1,72 @@
+@import "../../App.scss";
+
+// ─────────────────────────────────────────────────────────────────────────────
+// DRINK ABOUT — editorial beverage showcase
+// ─────────────────────────────────────────────────────────────────────────────
+
+.section-About {
+  margin: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  padding: 5rem 2rem;
+  background-color: $clr-background;
+
+  .section-About-Images {
+    display: grid;
+    margin: auto;
+    width: 60%;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    @media screen and (max-width: 768px) {
+      width: 90%;
+    }
+
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 400ms ease;
+
+      &:hover { transform: scale(1.03); }
+    }
+  }
+
+  .s2 {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem auto 0;
+    padding: 0;
+    text-align: center;
+
+    p {
+      font-family: $font-heading !important;
+      font-size: clamp(1.25rem, 2.5vw, 1.875rem) !important;
+      font-weight: 700;
+      color: $clr-jet !important;
+      line-height: 1.45;
+      letter-spacing: -0.02em;
+    }
+
+    @media screen and (max-width: 768px) {
+      width: 85%;
+    }
+  }
+}

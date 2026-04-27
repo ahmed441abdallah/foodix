@@ -1,0 +1,60 @@
+@import "../../App.scss";
+
+// ─────────────────────────────────────────────────────────────────────────────
+// QUOTE / SECTION CALLOUT — full-bleed editorial quote block
+// ─────────────────────────────────────────────────────────────────────────────
+
+.section-container {
+  position: relative;
+  background: url('../../assets/images/bg2.png') no-repeat center;
+  background-size: cover;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 7rem 3rem;
+  margin-top: 0;
+
+  // Dark overlay for legibility
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 10, 10, 0.65);
+    z-index: 0;
+  }
+
+  .content-s {
+    position: relative;
+    z-index: 1;
+    color: $clr-surface;
+    width: 55%;
+    max-width: 680px;
+
+    p {
+      font-family: $font-heading !important;
+      font-size: clamp(1.25rem, 2.5vw, 1.875rem) !important;
+      font-style: italic;
+      font-weight: 500;
+      letter-spacing: 0;
+      line-height: 1.55;
+      color: rgba(255, 255, 255, 0.92) !important;
+      margin-bottom: 1.5rem;
+    }
+  }
+}
+
+@media (max-width: 759px) {
+  .section-container {
+    padding: 5rem 1.5rem;
+
+    .content-s {
+      width: 100%;
+
+      p {
+        font-size: 1.125rem !important;
+      }
+    }
+  }
+}

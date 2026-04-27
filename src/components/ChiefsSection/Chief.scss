@@ -1,0 +1,132 @@
+@import '../../App.scss';
+@import '~slick-carousel/slick/slick.css';
+@import '~slick-carousel/slick/slick-theme.css';
+
+// ─────────────────────────────────────────────────────────────────────────────
+// CHEFS CAROUSEL — minimal editorial slider
+// ─────────────────────────────────────────────────────────────────────────────
+
+.chiefs-section {
+  height: auto;
+  padding: 5rem 2rem;
+  text-align: center;
+  background-color: $clr-background;
+
+  .slider-wrapper {
+    max-width: 90%;
+    height: auto;
+    margin: auto;
+  }
+
+  .slick-slide {
+    height: auto;
+    padding: 0.75rem;
+  }
+
+  .title {
+    font-family: $font-body !important;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: $clr-text-muted;
+    margin-bottom: 3rem;
+  }
+}
+
+.top-chiefs-container {
+  display: flex;
+  width: 90%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin: 0 auto;
+}
+
+// ── Chef Card ─────────────────────────────────────────────────────────────────
+
+.chief-card {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem 1rem;
+  background-color: $clr-surface;
+  border: 1px solid $clr-border;
+  transition: $transition;
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: $clr-espresso;
+  }
+
+  .imag {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.25rem;
+
+    img {
+      height: 120px;
+      width: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      filter: grayscale(15%);
+      transition: filter 300ms ease;
+
+      .chief-card:hover & {
+        filter: grayscale(0%);
+      }
+    }
+  }
+
+  .chief-card-info {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.375rem;
+
+    .chief-card-name {
+      font-family: $font-heading !important;
+      font-size: 1rem;
+      font-weight: 700;
+      color: $clr-jet;
+      letter-spacing: -0.01em;
+    }
+
+    .chief-recipe-count,
+    .chief-cuisine {
+      font-family: $font-body;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      color: $clr-text-muted;
+    }
+
+    .cheif-icons {
+      display: flex;
+      gap: 0.625rem;
+      margin-top: 0.5rem;
+
+      svg {
+        font-size: 14px;
+        color: $clr-text-muted;
+        transition: $transition;
+
+        &:hover { color: $clr-jet; }
+
+        &:nth-child(1) { color: #0a66c2; }
+        &:nth-child(2) { color: #1da1f2; }
+        &:nth-child(3) { color: #e1306c; }
+      }
+    }
+  }
+}
+
+.slick-arrow {
+  display: none !important;
+}

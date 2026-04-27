@@ -1,0 +1,335 @@
+@import "../../App.scss";
+
+// ─────────────────────────────────────────────────────────────────────────────
+// NAVBAR — ultra-minimal, jet-black bar
+// ─────────────────────────────────────────────────────────────────────────────
+
+.navbar {
+  height: 80px;
+  padding: 0 0;
+  position: relative;
+  z-index: 999;
+  background: $clr-jet;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  transition: $transition;
+
+  .navbar-brand-text {
+    margin-left: 8px;
+    font-family: $font-body;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .navbar-search-btn {
+    margin-right: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    transition: $transition;
+
+    &:hover { color: rgba(255, 255, 255, 1); }
+  }
+
+  .navbar-show-btn {
+    color: $clr-text-muted !important;
+    transition: $transition;
+
+    &:hover { color: rgba(255, 255, 255, 0.85) !important; }
+  }
+
+  @media screen and (max-width: 768px) {
+    height: 64px;
+  }
+}
+
+.im {
+  width: 140px;
+  height: auto;
+  object-fit: contain;
+}
+
+.scrolled {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(10, 10, 10, 0.97);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// HERO HEADER — edge-to-edge, dark editorial
+// ─────────────────────────────────────────────────────────────────────────────
+
+.header {
+  color: $clr-surface;
+  font-size: 1rem;
+
+  .header-content {
+    min-height: 100vh;
+    background: $clr-jet;
+    display: flex;
+    align-items: center;
+  }
+
+  .header-title {
+    margin-top: 2rem;
+    font-family: $font-heading;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    color: $clr-surface;
+
+    @media screen and (max-width: 768px) {
+      font-size: 2.25rem;
+    }
+
+    @media screen and (max-width: 550px) {
+      font-size: 1.875rem;
+    }
+  }
+}
+
+button {
+  color: $clr-surface;
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// SEARCH FORM — minimal underline style
+// ─────────────────────────────────────────────────────────────────────────────
+
+.search-form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+
+  .form-control-input {
+    background: rgba(255, 255, 255, 0.06);
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    color: $clr-surface;
+    min-width: 220px;
+    font-size: 12px;
+    font-family: $font-body;
+    letter-spacing: 0.05em;
+    height: 40px;
+    padding: 0 1rem;
+    border-radius: 0;
+    transition: $transition;
+
+    &::placeholder { color: rgba(255, 255, 255, 0.35); }
+    &:focus { border-bottom-color: rgba(255, 255, 255, 0.8); outline: none; }
+
+    @media screen and (max-width: 550px) {
+      width: 100%;
+      min-width: unset;
+    }
+  }
+
+  .form-submit-btn {
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    position: relative;
+    transition: $transition;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      background-color: $clr-surface;
+      border-color: $clr-surface;
+
+      .btn-icon { color: $clr-jet; transform: scale(0.95); }
+    }
+
+    @media screen and (max-width: 550px) {
+      margin-top: 8px;
+    }
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// HERO SECTION (.bg) — dark editorial layout
+// ─────────────────────────────────────────────────────────────────────────────
+
+.bg {
+  background-color: $clr-jet;
+  margin: auto;
+
+  .healthy-eating-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 5rem 4rem;
+    gap: 4rem;
+
+    .text-section {
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      width: 55%;
+
+      h1 {
+        font-family: $font-heading;
+        font-size: clamp(2.25rem, 4.5vw, 4.25rem);
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        line-height: 1.05;
+        color: $clr-surface !important;
+
+        @media screen and (max-width: 768px) {
+          font-size: 2.25rem;
+        }
+      }
+
+      p {
+        color: rgba(255, 255, 255, 0.55) !important;
+        font-size: 14px;
+        line-height: 1.8;
+        margin-top: 1.5rem;
+        max-width: 42ch;
+      }
+    }
+
+    .image-section {
+      flex-direction: column;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .main-image {
+        width: 75%;
+        height: auto;
+        border-radius: 2px;
+
+        @media screen and (max-width: 768px) {
+          width: 80%;
+        }
+      }
+
+      .spices-container {
+        position: relative;
+        right: 150px;
+        bottom: 60px;
+
+        .spice-image {
+          width: 60%;
+          height: 100%;
+        }
+
+        @media screen and (max-width: 768px) {
+          position: relative;
+          right: 0;
+          bottom: 0;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 1219px) {
+    .healthy-eating-container {
+      flex-direction: column;
+      padding: 3rem 2rem;
+
+      .text-section {
+        width: 100%;
+      }
+
+      .image-section {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// SECONDARY HERO SECTION (.se2)
+// ─────────────────────────────────────────────────────────────────────────────
+
+.se2 {
+  display: flex;
+  margin: 0;
+  color: $clr-surface;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 3rem;
+  background-color: $clr-jet;
+  gap: 4rem;
+
+  .se2-1,
+  .se2-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+
+    img {
+      margin: 1.5rem 0;
+      width: 85%;
+      border-radius: 2px;
+    }
+
+    p {
+      padding: 1rem 0;
+      color: rgba(255, 255, 255, 0.5) !important;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    &:nth-of-type(1) { width: 50%; }
+    &:nth-of-type(2) { width: 40%; }
+  }
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    padding: 3rem 1.5rem;
+    gap: 0;
+
+    .se2-1,
+    .se2-2 {
+      width: 100% !important;
+      margin-bottom: 0;
+    }
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// SCROLL INDICATOR
+// ─────────────────────────────────────────────────────────────────────────────
+
+.scroll-indicator {
+  margin-top: 3rem;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: $font-body;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.35);
+
+  span { letter-spacing: 0.2em; }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// RESPONSIVE VISIBILITY
+// ─────────────────────────────────────────────────────────────────────────────
+
+.none  { display: inline; }
+.nonee { display: none; }
+
+@media screen and (max-width: 768px) {
+  .none  { display: none; }
+  .nonee { display: inline-block; }
+}

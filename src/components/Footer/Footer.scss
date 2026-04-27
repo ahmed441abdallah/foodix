@@ -1,0 +1,102 @@
+@import "../../App.scss";
+
+// ─────────────────────────────────────────────────────────────────────────────
+// FOOTER — jet-black luxury base with editorial layout
+// ─────────────────────────────────────────────────────────────────────────────
+
+.footer {
+  background: $clr-jet;
+  color: rgba(255, 255, 255, 0.7) !important;
+  padding: 5rem 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+
+  .footer-1 {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 3rem;
+    padding-bottom: 3rem;
+
+    @media screen and (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      @media screen and (max-width: 768px) {
+        align-items: flex-start;
+      }
+
+      h4 {
+        font-family: $font-body !important;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.35) !important;
+        margin-bottom: 1.25rem;
+      }
+
+      p {
+        font-family: $font-body !important;
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.55) !important;
+        line-height: 1.9;
+        margin-top: 0;
+      }
+
+      img {
+        width: 36px;
+        height: auto;
+        margin-bottom: 0.5rem;
+        opacity: 0.6;
+        transition: $transition;
+
+        &:hover { opacity: 1; }
+      }
+    }
+
+    .navbar-b {
+      img {
+        width: 120px;
+        margin-bottom: 1rem;
+        opacity: 0.85;
+      }
+
+      @media screen and (max-width: 768px) {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+      }
+    }
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+    margin: 0 0 1.5rem;
+  }
+
+  .footer-2 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0;
+
+    @media screen and (max-width: 768px) {
+      justify-content: flex-start;
+    }
+
+    p {
+      font-family: $font-body !important;
+      font-size: 11px !important;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.25) !important;
+    }
+  }
+}

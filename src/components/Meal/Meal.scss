@@ -1,0 +1,483 @@
+@import "../../App.scss";
+
+// ─────────────────────────────────────────────────────────────────────────────
+// MEAL LIST — editorial product-grid
+// ─────────────────────────────────────────────────────────────────────────────
+
+.all-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 3rem 0;
+}
+
+// ── Filter Bar ────────────────────────────────────────────────────────────────
+
+.f {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 100%;
+  margin-bottom: 2.5rem;
+
+  .filter-area {
+    position: relative;
+
+    select {
+      appearance: none;
+      background-color: $clr-jet;
+      color: rgba(255, 255, 255, 0.85);
+      border: none;
+      padding: 11px 40px 11px 18px;
+      font-family: $font-body;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="white"><path d="M0 0l5 6 5-6z"/></svg>');
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      background-size: 8px;
+      transition: $transition;
+
+      &:focus {
+        outline: none;
+      }
+
+      option {
+        background-color: $clr-jet;
+        color: $clr-surface;
+      }
+    }
+  }
+}
+
+// ── Meal Grid ─────────────────────────────────────────────────────────────────
+
+.sc-meal {
+  width: 100%;
+  display: grid;
+  gap: 2rem;
+
+  @media screen and (max-width: 576px) {
+    grid-template-columns: 1fr;
+  }
+
+  @media screen and (min-width: 576px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  // ── Meal Card ───────────────────────────────────────────────────────────────
+
+  .meal-itm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: $clr-surface;
+    cursor: pointer;
+    transition: $transition;
+
+    &:hover {
+      transform: translateY(-4px);
+
+      .link-p {
+        color: $clr-espresso !important;
+        transition: $transition;
+      }
+
+      .link-i {
+        margin-left: 10px;
+        transition: $transition;
+        color: $clr-espresso;
+      }
+    }
+
+    &-img {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $clr-background;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 400ms ease;
+      }
+
+      &:hover img {
+        transform: scale(1.04);
+      }
+    }
+
+    &-cat {
+      position: absolute;
+      right: 12px;
+      top: 12px;
+      padding: 4px 12px;
+      background-color: $clr-jet;
+      color: $clr-surface;
+      font-family: $font-body;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: 0;
+    }
+
+    &-body {
+      width: 100%;
+      padding: 1.25rem 1.25rem 1.5rem;
+      border: 1px solid $clr-border;
+      border-top: none;
+
+      .link {
+        margin-top: 0.75rem;
+        font-family: $font-body;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: $clr-espresso;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      &-info {
+        padding: 0;
+
+        h5, h4 {
+          font-family: $font-heading !important;
+          font-size: 1.125rem;
+          font-weight: 700;
+          color: $clr-jet;
+          line-height: 1.25;
+          margin-bottom: 0.375rem;
+        }
+      }
+    }
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// MEAL DETAIL PAGE
+// ─────────────────────────────────────────────────────────────────────────────
+
+.sc-details {
+  padding: 2.5rem 0;
+
+  .details-head {
+    .category-t {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .title {
+      font-family: $font-heading;
+      padding: 1rem 0;
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: $clr-jet;
+      border-bottom: 1px solid $clr-border;
+    }
+
+    .source {
+      display: flex;
+      align-items: center;
+      font-family: $font-body;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      margin-top: 0.75rem;
+
+      a {
+        display: flex;
+        align-items: center;
+        color: $clr-espresso !important;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+      }
+    }
+  }
+
+  .details-body-all {
+    .details-body {
+      .details-intro {
+        width: 100%;
+        margin-top: 2rem;
+
+        .ingredients {
+          color: $clr-jet;
+
+          h6 {
+            font-family: $font-body !important;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: $clr-text-muted;
+            margin-bottom: 1rem;
+          }
+
+          ul {
+            margin-top: 0.75rem;
+            display: grid;
+            gap: 0.75rem;
+
+            @media screen and (min-width: 576px) {
+              grid-template-columns: repeat(2, 1fr);
+            }
+
+            @media screen and (min-width: 768px) {
+              grid-template-columns: repeat(3, 1fr);
+            }
+
+            li {
+              font-family: $font-body;
+              font-size: 13px;
+              font-weight: 400;
+              color: $clr-text-secondary;
+              display: flex;
+              align-items: center;
+              gap: 0.625rem;
+
+              .li-dot {
+                background-color: $clr-espresso;
+                color: $clr-surface;
+                width: 26px;
+                height: 26px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                font-size: 12px;
+                flex-shrink: 0;
+              }
+            }
+          }
+        }
+      }
+
+      .measures {
+        ul {
+          grid-template-columns: repeat(2, 1fr);
+          margin-top: 0.75rem;
+          background-color: $clr-background;
+          padding: 1.5rem;
+          border: 1px solid $clr-border;
+
+          li {
+            margin-bottom: 0.625rem;
+            font-family: $font-body;
+            font-size: 13px;
+
+            .li-icon {
+              margin-right: 8px;
+              color: $clr-espresso;
+            }
+
+            .li-text {
+              color: $clr-text-primary;
+            }
+          }
+        }
+
+        @media screen and (min-width: 992px) {
+          margin-top: 4rem;
+        }
+      }
+
+      .instructions {
+        ul {
+          margin-top: 0.75rem;
+
+          li {
+            margin-bottom: 1.25rem;
+            display: grid;
+            grid-template-columns: 28px auto;
+            align-items: flex-start;
+            font-family: $font-body;
+            font-size: 14px;
+            color: $clr-text-secondary;
+            line-height: 1.7;
+          }
+        }
+      }
+    }
+  }
+}
+
+// ── Show More Button ──────────────────────────────────────────────────────────
+
+.show-more-btn {
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2.5rem auto;
+    border: 1px solid $clr-jet;
+    padding: 13px 36px;
+    background-color: transparent;
+    color: $clr-jet;
+    font-family: $font-body;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: $transition;
+
+    &:hover {
+      background-color: $clr-jet;
+      color: $clr-surface;
+    }
+  }
+}
+
+// ── Icons ─────────────────────────────────────────────────────────────────────
+
+.icons-i {
+  font-size: 18px !important;
+  margin-right: 8px;
+  color: $clr-espresso;
+}
+
+// ── Tags ──────────────────────────────────────────────────────────────────────
+
+.tags {
+  h6 {
+    font-family: $font-body !important;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: $clr-text-muted;
+    margin-right: 12px;
+  }
+
+  ul {
+    li {
+      margin-right: 6px;
+      padding: 3px 10px;
+      border: 1px solid $clr-border;
+      font-family: $font-body;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      color: $clr-text-secondary;
+      transition: $transition;
+
+      &:hover {
+        border-color: $clr-jet;
+        color: $clr-jet;
+      }
+    }
+  }
+}
+
+// ── Search ────────────────────────────────────────────────────────────────────
+
+.search-all {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .search {
+    margin-bottom: 0.75rem;
+    margin-left: 0.5rem;
+    border: none;
+    border-bottom: 1px solid $clr-border;
+    padding: 8px 12px;
+
+    input {
+      font-family: $font-body;
+      font-size: 13px !important;
+      color: $clr-text-primary;
+
+      &::placeholder { color: $clr-text-muted; }
+    }
+  }
+}
+
+// ── Details Grid Layout ───────────────────────────────────────────────────────
+
+.details-all {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+
+  @media screen and (max-width: 1014px) {
+    grid-template-columns: 1fr;
+  }
+
+  .details-right-all {
+    width: 100%;
+
+    section {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+
+      @media screen and (max-width: 679px) {
+        grid-template-columns: 1fr;
+      }
+
+      .all-card {
+        padding: 1rem;
+        border: 1px solid $clr-border;
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+        background-color: $clr-surface;
+        transition: $transition;
+
+        &:hover {
+          border-color: $clr-espresso;
+
+          .icon {
+            color: $clr-espresso;
+          }
+        }
+      }
+    }
+
+    .details-right-image {
+      width: 50%;
+      margin-right: 1.25rem;
+    }
+
+    .icons {
+      p {
+        font-size: 12px !important;
+      }
+    }
+  }
+
+  .details-img {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+}
